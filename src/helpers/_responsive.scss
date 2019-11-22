@@ -1,0 +1,9 @@
+$breakpoints: (
+  desktop: 1025
+);
+
+@mixin responsive($breakpoint) {
+  @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}px) {
+    @content;
+  }
+}
