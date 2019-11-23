@@ -16,7 +16,7 @@
 
 <script>
   import Track from './Track.vue';
-  import TracksService from '../services/TracksService.dev.js';
+  import TracksService from '../services/TracksService.js';
 
   const TracksList = {
     components: {
