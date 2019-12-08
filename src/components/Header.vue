@@ -11,6 +11,8 @@
 </script>
 
 <style lang="scss">
+  @import '../helpers/helpers.scss';
+
   .header {
     padding: 20px 0;
 
@@ -26,8 +28,13 @@
         bottom: 8px;
         left: 0;
         width: 100%;
-        height: 6px;
+        height: 5px;
         background: var(--baseFgColor);
+
+        @include responsive(desktop) {
+          bottom: 9px;
+          height: 6px;
+        }
       }
     }
 

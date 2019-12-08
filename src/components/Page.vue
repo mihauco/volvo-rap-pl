@@ -29,5 +29,9 @@
     max-width: 768px;
     margin: 0 auto;
     padding: 0 15px;
+
+    &__header {
+      margin-bottom: 20px;
+    }
   }
 </style>

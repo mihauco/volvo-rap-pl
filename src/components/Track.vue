@@ -70,8 +70,11 @@
   .track {
     $root: &;
     position: relative;
+    padding-right: 50px;
 
     @include responsive(desktop) {
+      padding-right: 100px;
+
       &::before {
         content: '';
         width: 3px;
@@ -95,7 +98,6 @@
     &__quote {
       font-size: 1.2rem;
       line-height: 1.5;
-      padding-right: 100px;
 
       span {
         font-weight: 700;
@@ -110,10 +112,13 @@
     &__links {
       position: absolute;
       top: 0;
-      right: 0;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
+      right: 3px;
+
+      @include responsive(desktop) {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
     }
 
     &__link {
@@ -121,13 +126,19 @@
       height: 26px;
       color: var(--lightFgColor);
       position: relative;
-      margin-right: 5px;
+      margin-bottom: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
 
+      @include responsive(desktop) {
+        margin-right: 5px;
+        margin-bottom: 0;
+      }
+
       &:last-child {
         margin-right: 0;
+        margin-bottom: 0;
       }
 
       &:hover,
@@ -146,46 +157,52 @@
         background: var(--baseFgColor);
       }
 
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        right: 4px;
-        height: 2px;
-        width: 0;
-        transition: width .2s;
-        transform: skew(-15deg);
-      }
-
-      &:hover {
+      @include responsive(desktop) {
         &::after {
-          right: auto;
-          left: -4px;
-          width: 100%;
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          right: 4px;
+          height: 2px;
+          width: 0;
+          transition: width .2s;
+          transform: skew(-15deg);
+        }
+
+        &:hover {
+          &::after {
+            right: auto;
+            left: -4px;
+            width: 100%;
+          }
         }
       }
 
       &--youtube {
         &::before {
-          #{$root}:hover & {
-            background: var(--youtube);
-          }
-        }
-
-        &::after {
           background: var(--youtube);
+
+          @include responsive(desktop) {
+            background: var(--baseFgColor);
+
+            #{$root}:hover & {
+              background: var(--youtube);
+            }
+          }
         }
       }
 
       &--spotify {
         &::before {
-          #{$root}:hover & {
-            background: var(--spotify);
-          }
-        }
-
-        &::after {
           background: var(--spotify);
+
+          @include responsive(desktop) {
+            background: var(--baseFgColor);
+
+            #{$root}:hover & {
+              background: var(--spotify);
+            }
+          }
         }
       }
 

@@ -42,6 +42,8 @@
 </script>
 
 <style lang="scss">
+  @import '../helpers/helpers.scss';
+
   .tracks-list {
     $root: &;
 
@@ -75,11 +77,14 @@
     }
 
     &__track {
-      margin-bottom: 30px;
-      transition: opacity .2s;
+      margin-bottom: 40px;
 
-      #{$root}:hover &:not(:hover) {
-        opacity: .5;
+      @include responsive(desktop) {
+        transition: opacity .2s;
+
+        #{$root}:hover &:not(:hover) {
+          opacity: .5;
+        }
       }
     }
   }
