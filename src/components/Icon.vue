@@ -9,17 +9,20 @@
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
   import {
     faYoutube,
-    faSpotify
+    faSpotify,
+    faGithub
   } from '@fortawesome/free-brands-svg-icons'
 
   library.add(
     faYoutube,
-    faSpotify
+    faSpotify,
+    faGithub
   );
 
   const icons = {
     youtube: ['fab', 'youtube'],
-    spotify: ['fab', 'spotify']
+    spotify: ['fab', 'spotify'],
+    github: ['fab', 'github']
   };
 
   const Icon = {
